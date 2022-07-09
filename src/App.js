@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import User from "./comp/User";
+import UserClass from "./comp/UserClass";
+import UserFunc from "./comp/UserFunc";
 
 function App() {
+  const users = [
+    {
+      id: 1,
+      name: "Alexandr",
+    },
+    {
+      id: 2,
+      name: "Dimitry",
+    },
+    {
+      id: 3,
+      name: "Hasan"
+    },
+    {
+      id: 4,
+      name: "Maxim",
+    },
+    {
+      id: 5,
+      name: "Alex",
+    },
+    {
+      id: 6,
+      name: "Moris",
+    },
+    {
+      id: 7,
+      name: "Mark",
+    },
+    {
+      id: 8,
+      name: "Sergey",
+    },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* {users.map((user, index) => {
+        return <UserClass name={user.name} key={index}/>;
+      })} */}
+         {users.map((user, index) => {
+        return <UserFunc name={user.name} key={user.id}/>;
+      })}
+    </>
   );
 }
 
-export default App;
+export default React.memo(App);
